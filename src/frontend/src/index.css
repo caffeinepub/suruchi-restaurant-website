@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark luxury theme always-on */
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.14 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.73 0.12 85;
+    --primary-foreground: 0.08 0 0;
+    --secondary: 0.16 0 0;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.14 0 0;
+    --muted-foreground: 0.7 0 0;
+    --accent: 0.68 0.19 44;
+    --accent-foreground: 0.08 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0.02 85;
+    --input: 0.2 0 0;
+    --ring: 0.73 0.12 85;
+    --chart-1: 0.73 0.12 85;
+    --chart-2: 0.68 0.19 44;
+    --chart-3: 0.6 0.1 85;
+    --chart-4: 0.5 0.08 85;
+    --chart-5: 0.4 0.06 85;
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.73 0.12 85;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.14 0 0;
+    --sidebar-accent-foreground: 0.95 0 0;
+    --sidebar-border: 0.22 0.02 85;
+    --sidebar-ring: 0.73 0.12 85;
+    /* Custom restaurant tokens */
+    --gold: 0.73 0.12 85;
+    --gold-dark: 0.62 0.1 75;
+    --gold-outline: 0.4 0.06 80;
+    --orange: 0.68 0.19 44;
+    --orange-hover: 0.72 0.21 44;
+    --bg-primary: 0.08 0 0;
+    --bg-secondary: 0.11 0 0;
+    --bg-card: 0.13 0 0;
+    --text-primary: 0.95 0 0;
+    --text-muted: 0.7 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+    background-color: #0b0b0c;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+  .font-body {
+    font-family: "Poppins", sans-serif;
+  }
+  .text-gold {
+    color: #d4af37;
+  }
+  .text-gold-dark {
+    color: #b8922d;
+  }
+  .text-orange {
+    color: #ff6b00;
+  }
+  .bg-gold {
+    background-color: #d4af37;
+  }
+  .bg-orange {
+    background-color: #ff6b00;
+  }
+  .border-gold {
+    border-color: #d4af37;
+  }
+  .border-gold-dim {
+    border-color: #6f5a1e;
+  }
+  .bg-primary-dark {
+    background-color: #0b0b0c;
+  }
+  .bg-secondary-dark {
+    background-color: #151518;
+  }
+  .bg-card-dark {
+    background-color: #1a1a1c;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4af37 0%, #b8922d 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-rule::before,
+  .gold-rule::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+  .menu-item-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .menu-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+  }
+  .gallery-item {
+    overflow: hidden;
+  }
+  .gallery-item img {
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  .gallery-item .overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .nav-link.active::after {
+    width: 100%;
+  }
+}
